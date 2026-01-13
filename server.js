@@ -1,7 +1,12 @@
 import { createServer } from "http";
 import { Server } from "socket.io";
 
-const httpServer = createServer();
+const httpServer = createServer((req, res) => {
+  if (req.url === "/") {
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("Baithak signaling server alive");
+  }
+});
 
 const io = new Server(httpServer, {
   cors: {
