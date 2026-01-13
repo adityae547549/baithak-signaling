@@ -3,6 +3,7 @@ node_modules/
 
 # frontend (served by Firebase, not backend)
 public/
+.hintrc
 
 # logs
 npm-debug.log*
